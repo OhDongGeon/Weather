@@ -16,7 +16,7 @@
 ### 사용 기술스택
 - Spring boot 2.7.9, Java jdk 1.8, Gradle
 - MySql
-- Lombok, Spring Web, json-simple 1.1.1, Logback, swagger 3.0.0
+- Lombok, Spring Web, JPA, json-simple 1.1.1, Logback, swagger 3.0.0
 - IntelliJ, MySql Workbench
 ---
 ### 외부 리소스
