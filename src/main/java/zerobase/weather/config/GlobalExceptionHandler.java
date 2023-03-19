@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) // 500번대 오류
     @ExceptionHandler(Exception.class)
     public Exception handleAllException() {

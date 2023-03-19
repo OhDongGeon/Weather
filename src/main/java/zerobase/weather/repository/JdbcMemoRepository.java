@@ -47,7 +47,7 @@ public class JdbcMemoRepository {
 
     // RowMapper는 jdbc를 통해 데이터베이스에서 데이터를 가져오면 JSON 형식으로 가져옴
     private RowMapper<Memo> memoRowMapper() {
-        return((rs, rowNum) -> new Memo(
+        return ((rs, rowNum) -> new Memo(
                 rs.getInt("id"),
                 rs.getString("text")));
     }

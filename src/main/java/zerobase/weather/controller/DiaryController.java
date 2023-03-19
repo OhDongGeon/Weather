@@ -15,6 +15,7 @@ import java.util.List;
 public class DiaryController {
     private final DiaryService diaryService;
 
+
     public DiaryController(DiaryService diaryService) {
         this.diaryService = diaryService;
     }

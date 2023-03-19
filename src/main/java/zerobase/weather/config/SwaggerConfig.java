@@ -23,6 +23,7 @@ public class SwaggerConfig {
                 .build().apiInfo(apiInfo());
     }
 
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("날씨 일기 프로젝트")

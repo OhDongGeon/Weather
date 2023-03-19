@@ -35,13 +35,14 @@ public class DiaryService {
     private String apiKey;
     private final DiaryRepository diaryRepository;
     private final DateWeatherRepository dateWeatherRepository;
-
     private static final Logger logger = LoggerFactory.getLogger(WeatherApplication.class);
+
 
     public DiaryService(DiaryRepository diaryRepository, DateWeatherRepository dateWeatherRepository) {
         this.diaryRepository = diaryRepository;
         this.dateWeatherRepository = dateWeatherRepository;
     }
+
 
     @Transactional
     @Scheduled(cron = "0 0 1 * * *")
@@ -70,6 +71,7 @@ public class DiaryService {
 
         logger.info("end to create diary");
     }
+
 
     private DateWeather getWeatherFromApi() {
         // open weather map에서 날씨 데이터 가져오기
@@ -116,6 +118,7 @@ public class DiaryService {
     }
 
 
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     // 일기 수정
     public void updateDiary(LocalDate date, String text) {
         Diary nowDiary = diaryRepository.getFirstByDate(date);
@@ -124,6 +127,7 @@ public class DiaryService {
     }
 
 
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     // 일기 삭제
     public void deleteDiary(LocalDate date) {
         diaryRepository.deleteAllByDate(date);
